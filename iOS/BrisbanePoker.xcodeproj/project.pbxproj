@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0166A1C7224E3F4A00A89AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166A1C6224E3F4A00A89AAC /* AppDelegate.swift */; };
+		0166A1CC224E3F4A00A89AAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0166A1CA224E3F4A00A89AAC /* Main.storyboard */; };
+		0166A1CE224E3F4B00A89AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0166A1CD224E3F4B00A89AAC /* Assets.xcassets */; };
+		0166A1D1224E3F4B00A89AAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0166A1CF224E3F4B00A89AAC /* LaunchScreen.storyboard */; };
+		0166A1DB224E403C00A89AAC /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166A1DA224E403C00A89AAC /* EventListCell.swift */; };
+		0166A1DD224E404300A89AAC /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166A1DC224E404300A89AAC /* EventModel.swift */; };
+		0166A1DF224E404900A89AAC /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166A1DE224E404900A89AAC /* extensions.swift */; };
+		0166A1E1224E405F00A89AAC /* StoredEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166A1E0224E405F00A89AAC /* StoredEvents.swift */; };
+		0166A1E3224E406D00A89AAC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166A1E2224E406D00A89AAC /* HeaderView.swift */; };
+		0166A1E9224E5AD000A89AAC /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166A1E8224E5AD000A89AAC /* StretchyHeaderLayout.swift */; };
+		0166A1ED224F2F6800A89AAC /* EventListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166A1EC224F2F6800A89AAC /* EventListController.swift */; };
+		5AB2E4908B593AE094B3937B /* Pods_BrisbanePoker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C35AF2C434E45F74A53F603 /* Pods_BrisbanePoker.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0166A1C3224E3F4A00A89AAC /* BrisbanePoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrisbanePoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0166A1C6224E3F4A00A89AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0166A1CB224E3F4A00A89AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0166A1CD224E3F4B00A89AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0166A1D0224E3F4B00A89AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0166A1D2224E3F4B00A89AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0166A1DA224E403C00A89AAC /* EventListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
+		0166A1DC224E404300A89AAC /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		0166A1DE224E404900A89AAC /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		0166A1E0224E405F00A89AAC /* StoredEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredEvents.swift; sourceTree = "<group>"; };
+		0166A1E2224E406D00A89AAC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		0166A1E8224E5AD000A89AAC /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
+		0166A1EC224F2F6800A89AAC /* EventListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListController.swift; sourceTree = "<group>"; };
+		3F6B84B723E20AFAF60E126A /* Pods-BrisbanePoker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrisbanePoker.debug.xcconfig"; path = "Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker.debug.xcconfig"; sourceTree = "<group>"; };
+		6C35AF2C434E45F74A53F603 /* Pods_BrisbanePoker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrisbanePoker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9888000C372C98C972FC355 /* Pods-BrisbanePoker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrisbanePoker.release.xcconfig"; path = "Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0166A1C0224E3F4A00A89AAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB2E4908B593AE094B3937B /* Pods_BrisbanePoker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0166A1BA224E3F4A00A89AAC = {
+			isa = PBXGroup;
+			children = (
+				0166A1C5224E3F4A00A89AAC /* BrisbanePoker */,
+				0166A1C4224E3F4A00A89AAC /* Products */,
+				1F6B8704EF525E2D76A015E0 /* Pods */,
+				215A047089CE0987B3023778 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0166A1C4224E3F4A00A89AAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0166A1C3224E3F4A00A89AAC /* BrisbanePoker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0166A1C5224E3F4A00A89AAC /* BrisbanePoker */ = {
+			isa = PBXGroup;
+			children = (
+				0166A1C6224E3F4A00A89AAC /* AppDelegate.swift */,
+				0166A1EC224F2F6800A89AAC /* EventListController.swift */,
+				0166A1E8224E5AD000A89AAC /* StretchyHeaderLayout.swift */,
+				0166A1E5224E408400A89AAC /* CollectionViewControllers */,
+				0166A1E4224E407B00A89AAC /* Model */,
+				0166A1CA224E3F4A00A89AAC /* Main.storyboard */,
+				0166A1CD224E3F4B00A89AAC /* Assets.xcassets */,
+				0166A1CF224E3F4B00A89AAC /* LaunchScreen.storyboard */,
+				0166A1DE224E404900A89AAC /* extensions.swift */,
+				0166A1D2224E3F4B00A89AAC /* Info.plist */,
+			);
+			path = BrisbanePoker;
+			sourceTree = "<group>";
+		};
+		0166A1E4224E407B00A89AAC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0166A1DC224E404300A89AAC /* EventModel.swift */,
+				0166A1E0224E405F00A89AAC /* StoredEvents.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0166A1E5224E408400A89AAC /* CollectionViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0166A1DA224E403C00A89AAC /* EventListCell.swift */,
+				0166A1E2224E406D00A89AAC /* HeaderView.swift */,
+			);
+			path = CollectionViewControllers;
+			sourceTree = "<group>";
+		};
+		1F6B8704EF525E2D76A015E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F6B84B723E20AFAF60E126A /* Pods-BrisbanePoker.debug.xcconfig */,
+				C9888000C372C98C972FC355 /* Pods-BrisbanePoker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		215A047089CE0987B3023778 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C35AF2C434E45F74A53F603 /* Pods_BrisbanePoker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0166A1C2224E3F4A00A89AAC /* BrisbanePoker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0166A1D5224E3F4B00A89AAC /* Build configuration list for PBXNativeTarget "BrisbanePoker" */;
+			buildPhases = (
+				B0A9CD3123433CB0F0A32DF3 /* [CP] Check Pods Manifest.lock */,
+				0166A1BF224E3F4A00A89AAC /* Sources */,
+				0166A1C0224E3F4A00A89AAC /* Frameworks */,
+				0166A1C1224E3F4A00A89AAC /* Resources */,
+				C378C38BBA6D7154992F04D6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrisbanePoker;
+			productName = BrisbanePoker;
+			productReference = 0166A1C3224E3F4A00A89AAC /* BrisbanePoker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0166A1BB224E3F4A00A89AAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = AI;
+				TargetAttributes = {
+					0166A1C2224E3F4A00A89AAC = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 0166A1BE224E3F4A00A89AAC /* Build configuration list for PBXProject "BrisbanePoker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0166A1BA224E3F4A00A89AAC;
+			productRefGroup = 0166A1C4224E3F4A00A89AAC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0166A1C2224E3F4A00A89AAC /* BrisbanePoker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0166A1C1224E3F4A00A89AAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0166A1D1224E3F4B00A89AAC /* LaunchScreen.storyboard in Resources */,
+				0166A1CE224E3F4B00A89AAC /* Assets.xcassets in Resources */,
+				0166A1CC224E3F4A00A89AAC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B0A9CD3123433CB0F0A32DF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BrisbanePoker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C378C38BBA6D7154992F04D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0166A1BF224E3F4A00A89AAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0166A1DF224E404900A89AAC /* extensions.swift in Sources */,
+				0166A1DB224E403C00A89AAC /* EventListCell.swift in Sources */,
+				0166A1E9224E5AD000A89AAC /* StretchyHeaderLayout.swift in Sources */,
+				0166A1E1224E405F00A89AAC /* StoredEvents.swift in Sources */,
+				0166A1DD224E404300A89AAC /* EventModel.swift in Sources */,
+				0166A1C7224E3F4A00A89AAC /* AppDelegate.swift in Sources */,
+				0166A1ED224F2F6800A89AAC /* EventListController.swift in Sources */,
+				0166A1E3224E406D00A89AAC /* HeaderView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0166A1CA224E3F4A00A89AAC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0166A1CB224E3F4A00A89AAC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0166A1CF224E3F4B00A89AAC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0166A1D0224E3F4B00A89AAC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0166A1D3224E3F4B00A89AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0166A1D4224E3F4B00A89AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0166A1D6224E3F4B00A89AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F6B84B723E20AFAF60E126A /* Pods-BrisbanePoker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DR9KPDUCYX;
+				INFOPLIST_FILE = BrisbanePoker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.BrisbanePoker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0166A1D7224E3F4B00A89AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9888000C372C98C972FC355 /* Pods-BrisbanePoker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DR9KPDUCYX;
+				INFOPLIST_FILE = BrisbanePoker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.BrisbanePoker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0166A1BE224E3F4A00A89AAC /* Build configuration list for PBXProject "BrisbanePoker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0166A1D3224E3F4B00A89AAC /* Debug */,
+				0166A1D4224E3F4B00A89AAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0166A1D5224E3F4B00A89AAC /* Build configuration list for PBXNativeTarget "BrisbanePoker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0166A1D6224E3F4B00A89AAC /* Debug */,
+				0166A1D7224E3F4B00A89AAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0166A1BB224E3F4A00A89AAC /* Project object */;
+}
