@@ -5,6 +5,7 @@
 //  Created by AI on 29/3/19.
 //  Copyright © 2019 AI. All rights reserved.
 //
+import UIKit
 
 class EventModel {
     
@@ -21,7 +22,6 @@ class EventModel {
     init?(json: [String: Any]) {
         // 1
         self.name = json["name"] as? String
-        self.date = json["date"] as? String
         self.buyin = json["buyin"] as? Double
         self.fee = json["fee"] as? Double
         self.location = json["location"] as? String
@@ -29,6 +29,7 @@ class EventModel {
         self.stack = json["stack"] as? Double
         self.levels = json["levels"] as? Double
         self.rebuys = json["rebuys"] as? Bool
+        self.date = json["date"] as? String
     }
     
 }

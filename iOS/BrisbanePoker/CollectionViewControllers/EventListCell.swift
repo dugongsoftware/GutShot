@@ -19,7 +19,7 @@ class EventListCell: UICollectionViewCell {
     fileprivate func setupCellDetails() {
         guard let detail = self.cellDetail else {return}
         eventNameLabel.text = detail.name
-        dateLabel.text = detail.date
+        dateLabel.text = formatToString(str: detail.date!)
         addressLabel.text = detail.location
     }
     
@@ -76,4 +76,17 @@ class EventListCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension EventListCell {
+    func formatToString(str: String) -> String {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "dd-MM-yyyy HH:mm"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM d, h:mm a"
+        
+        let date = dateFormatterGet.date(from: str)
+        return dateFormatterPrint.string(from: date!)
+    }
 }

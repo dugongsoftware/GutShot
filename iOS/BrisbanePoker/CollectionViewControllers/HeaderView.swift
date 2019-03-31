@@ -54,7 +54,6 @@ class HeaderView: UICollectionReusableView {
     }
     
     func setupHUD() {
-        
         addSubview(headerColorView)
         headerColorView.anchor(top: superview?.topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 275)
         
@@ -73,12 +72,12 @@ class HeaderView: UICollectionReusableView {
     }
     
     fileprivate func setupPopularEventView() {
-        
         popularEventView.layer.borderColor = UIColor.lightGray.cgColor
         popularEventView.layer.borderWidth = 0.5
         
         popularEventView.addSubview(popularEventImageView)
         popularEventImageView.anchor(top: popularEventView.topAnchor, left: popularEventImageView.leftAnchor, bottom: nil, right: popularEventImageView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 175)
+        popularEventImageView.contentMode = .scaleAspectFill
         popularEventImageView.clipsToBounds = true
         
         popularEventView.addSubview(popularEventNameLabel)
@@ -90,8 +89,8 @@ class HeaderView: UICollectionReusableView {
     
     let popularEventImageView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.image = #imageLiteral(resourceName: "POKER")
+        iv.contentMode = .scaleAspectFit
+        iv.image = #imageLiteral(resourceName: "poker_pic")
         return iv
     }()
     

@@ -16,7 +16,7 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     
     fileprivate let cellId = "cellId"
     fileprivate let headerId = "headerId"
-    fileprivate let apiURL = "http://www.json-generator.com/api/json/get/coEaVthIzm?indent=2"
+    fileprivate let apiURL = "http://www.json-generator.com/api/json/get/bOiJZVsxrC?indent=2"
     fileprivate let padding: CGFloat = 16
     
     var eventList = StoredEvents.sharedInstance.collection
@@ -51,7 +51,31 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! HeaderView
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(tapDetected))
+        header.addGestureRecognizer(tapGestureRecognizer)
+        
         return header
+    }
+    
+    @objc func tapDetected() {
+       self.selectedEvent = eventList[0]
+        pushToEventDetailController()
+    }
+    
+    var selectedEvent: EventModel?
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let indexData = eventList[indexPath.row]
+        self.selectedEvent = indexData
+        pushToEventDetailController()
+    }
+    
+    fileprivate func pushToEventDetailController() -> Void {
+        let vc = EventDetailController()
+        if let selectedEvent = selectedEvent {
+            vc.selectedEvent = selectedEvent
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

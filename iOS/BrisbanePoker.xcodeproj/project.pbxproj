@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0128174A224F56A100F78D21 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01281749224F56A100F78D21 /* EventDetailController.swift */; };
 		0166A1C7224E3F4A00A89AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166A1C6224E3F4A00A89AAC /* AppDelegate.swift */; };
 		0166A1CC224E3F4A00A89AAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0166A1CA224E3F4A00A89AAC /* Main.storyboard */; };
 		0166A1CE224E3F4B00A89AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0166A1CD224E3F4B00A89AAC /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01281749224F56A100F78D21 /* EventDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
 		0166A1C3224E3F4A00A89AAC /* BrisbanePoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrisbanePoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0166A1C6224E3F4A00A89AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0166A1CB224E3F4A00A89AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -34,9 +36,7 @@
 		0166A1E0224E405F00A89AAC /* StoredEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredEvents.swift; sourceTree = "<group>"; };
 		0166A1E2224E406D00A89AAC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0166A1E8224E5AD000A89AAC /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
-		0166A1EC224F2F6800A89AAC /* EventListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListController.swift; sourceTree = "<group>"; };
-		06FE7BF12636D92D77FCBB69 /* Pods-BrisbanePoker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrisbanePoker.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker.release.xcconfig"; sourceTree = "<group>"; };
-		0F3F1D47A0CAEEC72CA036F9 /* Pods-BrisbanePoker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrisbanePoker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker.debug.xcconfig"; sourceTree = "<group>"; };
+		0166A1EC224F2F6800A89AAC /* EventListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventListController.swift; path = ../EventListController.swift; sourceTree = "<group>"; };
 		3F6B84B723E20AFAF60E126A /* Pods-BrisbanePoker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrisbanePoker.debug.xcconfig"; path = "Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker.debug.xcconfig"; sourceTree = "<group>"; };
 		6C35AF2C434E45F74A53F603 /* Pods_BrisbanePoker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrisbanePoker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9888000C372C98C972FC355 /* Pods-BrisbanePoker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrisbanePoker.release.xcconfig"; path = "Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,8 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				0166A1C6224E3F4A00A89AAC /* AppDelegate.swift */,
-				0166A1EC224F2F6800A89AAC /* EventListController.swift */,
 				0166A1E8224E5AD000A89AAC /* StretchyHeaderLayout.swift */,
+				01281749224F56A100F78D21 /* EventDetailController.swift */,
 				0166A1E5224E408400A89AAC /* CollectionViewControllers */,
 				0166A1E4224E407B00A89AAC /* Model */,
 				0166A1CA224E3F4A00A89AAC /* Main.storyboard */,
@@ -101,6 +101,7 @@
 		0166A1E5224E408400A89AAC /* CollectionViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0166A1EC224F2F6800A89AAC /* EventListController.swift */,
 				0166A1DA224E403C00A89AAC /* EventListCell.swift */,
 				0166A1E2224E406D00A89AAC /* HeaderView.swift */,
 			);
@@ -112,8 +113,6 @@
 			children = (
 				3F6B84B723E20AFAF60E126A /* Pods-BrisbanePoker.debug.xcconfig */,
 				C9888000C372C98C972FC355 /* Pods-BrisbanePoker.release.xcconfig */,
-				0F3F1D47A0CAEEC72CA036F9 /* Pods-BrisbanePoker.debug.xcconfig */,
-				06FE7BF12636D92D77FCBB69 /* Pods-BrisbanePoker.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -200,11 +199,15 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BrisbanePoker-checkManifestLockResult.txt",
 			);
@@ -218,13 +221,17 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
@@ -232,7 +239,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -248,6 +255,7 @@
 				0166A1E1224E405F00A89AAC /* StoredEvents.swift in Sources */,
 				0166A1DD224E404300A89AAC /* EventModel.swift in Sources */,
 				0166A1C7224E3F4A00A89AAC /* AppDelegate.swift in Sources */,
+				0128174A224F56A100F78D21 /* EventDetailController.swift in Sources */,
 				0166A1ED224F2F6800A89AAC /* EventListController.swift in Sources */,
 				0166A1E3224E406D00A89AAC /* HeaderView.swift in Sources */,
 			);
@@ -393,11 +401,11 @@
 		};
 		0166A1D6224E3F4B00A89AAC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F3F1D47A0CAEEC72CA036F9 /* Pods-BrisbanePoker.debug.xcconfig */;
+			baseConfigurationReference = 3F6B84B723E20AFAF60E126A /* Pods-BrisbanePoker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KN42EYUY25;
+				DEVELOPMENT_TEAM = DR9KPDUCYX;
 				INFOPLIST_FILE = BrisbanePoker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,11 +420,11 @@
 		};
 		0166A1D7224E3F4B00A89AAC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06FE7BF12636D92D77FCBB69 /* Pods-BrisbanePoker.release.xcconfig */;
+			baseConfigurationReference = C9888000C372C98C972FC355 /* Pods-BrisbanePoker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KN42EYUY25;
+				DEVELOPMENT_TEAM = DR9KPDUCYX;
 				INFOPLIST_FILE = BrisbanePoker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
