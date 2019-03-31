@@ -1,5 +1,5 @@
 # GutShot
-iOS Poker Tournament Directory
+iOS Poker Tournament Directory.  The feed of events comes from https://dugongsoftware.github.io/GutShotFeed/tournaments.json.  To add events, make a PR.
 
 ## Venues
 ```
