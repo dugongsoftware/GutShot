@@ -14,15 +14,16 @@ iOS Poker Tournament Directory.  The feed of events comes from https://dugongsof
 ## Events
 ```
   {
-    "name": "Monday night poker",
-    "buyin: 100.00,
-    "fee": 10.00,
-    "location": "Queens Arms Hotel",
-    "type": "No Limit Texas Holdem",
-    "stack": 50000,
-    "levels": 20,
-    "rebuys": false
-  }
+      "fee": 10, 
+      "name": "Monday night poker", 
+      "rebuys": false, 
+      "buyin": 100, 
+      "levels": 20, 
+      "location": "Queens Arms Hotel", 
+      "date": "18:30", 
+      "type": "No Limit Texas Holdem", 
+      "stack": 50000
+    }
 ```
 
 ## Settings
