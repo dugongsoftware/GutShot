@@ -19,7 +19,7 @@ class EventListCell: UICollectionViewCell {
     fileprivate func setupCellDetails() {
         guard let detail = self.cellDetail else {return}
         eventNameLabel.text = detail.name
-        dateLabel.text = formatToString(str: detail.date!)
+        dateLabel.text = formatToString(str: detail.start!)
         addressLabel.text = detail.location
     }
     

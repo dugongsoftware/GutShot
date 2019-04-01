@@ -21,7 +21,7 @@ class EventDetailController: UIViewController {
     fileprivate func setupTexts() {
         guard let event = selectedEvent else { return }
         eventNameLabel.text = event.name
-        calendarLabel.text = formatToString(str: event.date!)
+        calendarLabel.text = formatToString(str: event.start!)
         locationLabel.text = event.location
     }
     
@@ -210,7 +210,7 @@ extension EventDetailController {
                 let event:EKEvent = EKEvent(eventStore: eventStore)
                 
                 event.title = self.selectedEvent?.name
-                let strDate = self.selectedEvent?.date
+                let strDate = self.selectedEvent?.start
                 let formattedDate = self.formatToDate(str: strDate!)
                 event.startDate = formattedDate
                 event.endDate = formattedDate

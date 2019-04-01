@@ -10,7 +10,7 @@ import UIKit
 class EventModel {
     
     let name: String?
-    let date: String?
+    let start: String?
     let buyin: Double?
     let fee: Double?
     let location: String?
@@ -29,7 +29,6 @@ class EventModel {
         self.stack = json["stack"] as? Double
         self.levels = json["levels"] as? Double
         self.rebuys = json["rebuys"] as? Bool
-        self.date = json["date"] as? String
+        self.start = json["start"] as? String
     }
-    
 }
