@@ -76,3 +76,9 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+iOS/Pods/Target Support Files/Alamofire/
+
+iOS/Pods/Target Support Files/SwiftSpinner/
+
+iOS/Pods/Target Support Files/SwiftyJSON/
