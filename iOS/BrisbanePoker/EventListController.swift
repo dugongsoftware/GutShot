@@ -15,7 +15,7 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     
     fileprivate let cellId = "cellId"
     fileprivate let headerId = "headerId"
-    fileprivate let apiURL = "http://www.json-generator.com/api/json/get/bOiJZVsxrC?indent=2"
+    fileprivate let apiURL = "https://dugongsoftware.github.io/GutShotFeed/tournaments.json"
     fileprivate let padding: CGFloat = 16
     
     var eventList = StoredEvents.sharedInstance.collection

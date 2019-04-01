@@ -1,5 +1,5 @@
 # GutShot
-iOS Poker Tournament Directory
+iOS Poker Tournament Directory.  The feed of events comes from https://dugongsoftware.github.io/GutShotFeed/tournaments.json.  To add events, make a PR.
 
 ## Venues
 ```
@@ -13,18 +13,16 @@ iOS Poker Tournament Directory
 ```
 ## Events
 ```
-{
-  'Type': 'Tournament',
-  'GameType': 'No Limit Texas Holdem',
-  'Name': 'Monday NLH Night Deep Stack',
-  'StartTime', '2019-04-29 19:00',
-  'Stack': '40000',
-  'Blinds': {
-    'SmallBind': 50,
-    'BigBlind': 100
-  },
-  'Level': 15
-}
+  {
+    "name": "Monday night poker",
+    "buyin: 100.00,
+    "fee": 10.00,
+    "location": "Queens Arms Hotel",
+    "type": "No Limit Texas Holdem",
+    "stack": 50000,
+    "levels": 20,
+    "rebuys": false
+  }
 ```
 
 ## Settings
