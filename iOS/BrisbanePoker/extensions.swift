@@ -19,6 +19,9 @@ extension UIColor {
         return UIColor.rgb(red: 17, green: 154, blue: 237)
     }
     
+    static func mainBlack() -> UIColor {
+        return UIColor.rgb(red: 0, green: 0, blue: 0)
+    }
 }
 
 struct AnchoredConstraints {
@@ -55,7 +58,6 @@ extension UIView {
         if height != 0 {
             self.heightAnchor.constraint(equalToConstant: height).isActive = true
         }
-        
     }
     
     func fillSuperview(padding: UIEdgeInsets = .zero) {
@@ -95,6 +97,4 @@ extension UIView {
             heightAnchor.constraint(equalToConstant: size.height).isActive = true
         }
     }
-    
 }
-
