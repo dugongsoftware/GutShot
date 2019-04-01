@@ -16,7 +16,7 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     
     fileprivate let cellId = "cellId"
     fileprivate let headerId = "headerId"
-    fileprivate let apiURL = "http://www.json-generator.com/api/json/get/bOiJZVsxrC?indent=2"
+    fileprivate let apiURL = "https://dugongsoftware.github.io/GutShotFeed/tournaments.json"
     fileprivate let padding: CGFloat = 16
     
     var eventList = StoredEvents.sharedInstance.collection
@@ -95,9 +95,7 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width - 2 * padding, height: 100)
     }
-    
 }
-
 
 extension EventListController {
     
@@ -121,7 +119,5 @@ extension EventListController {
                 SwiftSpinner.hide()
             }
         }
-        
     }
-    
 }
