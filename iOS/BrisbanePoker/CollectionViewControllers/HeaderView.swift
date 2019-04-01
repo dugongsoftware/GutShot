@@ -55,7 +55,7 @@ class HeaderView: UICollectionReusableView {
     
     func setupHUD() {
         addSubview(headerColorView)
-        headerColorView.anchor(top: superview?.topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 275)
+        headerColorView.anchor(top: superview?.topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 175)
         
         addSubview(whatsHappeningLabel)
         whatsHappeningLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 70, paddingLeft: 15, paddingBottom: 0, paddingRight: 0, width: 200, height: 30)
