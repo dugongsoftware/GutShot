@@ -12,13 +12,13 @@ class HeaderView: UICollectionReusableView {
     
     let headerColorView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.mainBlue()
+        view.backgroundColor = UIColor.mainBlack()
         return view
     }()
     
     let whatsHappeningLabel: UILabel = {
         let label = UILabel()
-        label.text = "What's Happening in"
+        label.text = "What's happening in"
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 14)
         return label
@@ -27,7 +27,7 @@ class HeaderView: UICollectionReusableView {
     let locationLabel: UILabel = {
         let label = UILabel()
         let attributedText = NSMutableAttributedString(string: "Brisbane", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 45)])
-        attributedText.append(NSAttributedString(string: "  tonight ?", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]))
+        attributedText.append(NSAttributedString(string: "  tonight?", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]))
         label.attributedText = attributedText
         label.textColor = .white
         return label
@@ -63,12 +63,12 @@ class HeaderView: UICollectionReusableView {
         addSubview(locationLabel)
         locationLabel.anchor(top: whatsHappeningLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 15, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
         
-        addSubview(popularEventView)
-        popularEventView.anchor(top: nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 15, paddingBottom: 10, paddingRight: 15, width: 0, height: 225)
-        setupPopularEventView()
+        //addSubview(popularEventView)
+//        popularEventView.anchor(top: nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 15, paddingBottom: 10, paddingRight: 15, width: 0, height: 225)
+//        setupPopularEventView()
         
-        addSubview(popularLabel)
-        popularLabel.anchor(top: nil, left: leftAnchor, bottom: popularEventView.topAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 0, height: 20)
+//        addSubview(popularLabel)
+//        popularLabel.anchor(top: nil, left: leftAnchor, bottom: popularEventView.topAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 0, height: 20)
     }
     
     fileprivate func setupPopularEventView() {
@@ -112,5 +112,4 @@ class HeaderView: UICollectionReusableView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

@@ -45,6 +45,4 @@ class StretchyHeaderLayout: UICollectionViewFlowLayout {
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
-    
 }
-

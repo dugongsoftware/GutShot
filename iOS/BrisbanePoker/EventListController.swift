@@ -6,7 +6,6 @@
 //  Copyright © 2019 AI. All rights reserved.
 //
 
-
 import UIKit
 import SwiftyJSON
 import Alamofire
@@ -95,9 +94,7 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width - 2 * padding, height: 100)
     }
-    
 }
-
 
 extension EventListController {
     
@@ -121,7 +118,5 @@ extension EventListController {
                 SwiftSpinner.hide()
             }
         }
-        
     }
-    
 }

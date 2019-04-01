@@ -27,7 +27,7 @@ class EventListCell: UICollectionViewCell {
         var iv = UIImageView()
         iv.image = #imageLiteral(resourceName: "POKER")
         iv.contentMode = .scaleAspectFill
-        iv.layer.cornerRadius = 5
+        //iv.layer.cornerRadius = 5
         iv.clipsToBounds = true
         return iv
     }()
@@ -75,7 +75,6 @@ class EventListCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 extension EventListCell {
