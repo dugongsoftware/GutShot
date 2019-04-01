@@ -20,7 +20,7 @@ iOS Poker Tournament Directory.  The feed of events comes from https://dugongsof
       "buyin": 100, 
       "levels": 20, 
       "location": "Queens Arms Hotel", 
-      "date": "18:30", 
+      "start": "18:30", 
       "type": "No Limit Texas Holdem", 
       "stack": 50000
     }
