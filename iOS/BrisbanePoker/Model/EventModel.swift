@@ -19,6 +19,8 @@ class EventModel {
     let levels: Double?
     let rebuys: Bool?
     
+    //let nextDate: Date?
+    
     init?(json: [String: Any]) {
         // 1
         self.name = json["name"] as? String
@@ -30,5 +32,14 @@ class EventModel {
         self.levels = json["levels"] as? Double
         self.rebuys = json["rebuys"] as? Bool
         self.start = json["start"] as? String
+    }
+    
+    func nextDate(key: String, value: String) -> DateInterval {
+        //key as "weekly"
+        //value as 1
+        //should return Monday
+        
+        let currentDate = Date()
+        return currentDate
     }
 }

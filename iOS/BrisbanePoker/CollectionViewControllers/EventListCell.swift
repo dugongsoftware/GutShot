@@ -80,10 +80,10 @@ class EventListCell: UICollectionViewCell {
 extension EventListCell {
     func formatToString(str: String) -> String {
         let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "dd-MM-yyyy HH:mm"
+        dateFormatterGet.dateFormat = "HH:mm"
         
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "MMM d, h:mm a"
+        dateFormatterPrint.dateFormat = "h:mm a"
         
         let date = dateFormatterGet.date(from: str)
         return dateFormatterPrint.string(from: date!)
