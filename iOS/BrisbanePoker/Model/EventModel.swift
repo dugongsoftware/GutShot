@@ -5,12 +5,13 @@
 //  Created by AI on 29/3/19.
 //  Copyright © 2019 AI. All rights reserved.
 //
-import UIKit
+import Foundation
 
 class EventModel {
     
     let name: String?
-    let start: String?
+    let start: String? //to be time
+    //let eventDate: Date?
     let buyin: Double?
     let fee: Double?
     let location: String?
@@ -34,7 +35,20 @@ class EventModel {
         self.start = json["start"] as? String
     }
     
-    func nextDate(key: String, value: String) -> DateInterval {
+//    init?(_name: String,  _start: String, _buyin: Double, _fee: Double, _location: String, _type: String, _stack: Double, _levels: Double, _rebuys: Bool) {
+//        
+//        self.name = _name
+//        self.start = _start
+//        self.buyin = _buyin
+//        self.fee = _fee
+//        self.location = _location
+//        self.type = _type
+//        self.stack = _stack
+//        self.levels = _levels
+//        self.rebuys = _rebuys
+//    }
+//    
+    func nextDate(key: String, value: String) -> Date {
         //key as "weekly"
         //value as 1
         //should return Monday

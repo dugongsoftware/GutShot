@@ -110,8 +110,29 @@ extension EventListController {
                 for i in 0...count-1 {
                     let event = swiftyJsonVar[i]
                     let eventDictionary = event.dictionaryObject
+                    
+                    //do the rest of the properties from json
+                    let eventname = eventDictionary!["name"] as? String
+                    let buyin = eventDictionary!["buyin"] as? Double
+                    let fee = eventDictionary!["fee"] as? Double
+                    let location = eventDictionary!["location"] as? String
+                    let type = eventDictionary!["type"] as? String
+                    let stack = eventDictionary!["stack"] as? Double
+                    let levels = eventDictionary!["levels"] as? Double
+                    let rebuys = eventDictionary!["rebuys"] as? Bool
+                    //let start = eventDictionary!["start"] as? String
+                    
+                    let eventDetails = EventDetailsViewModel(name: eventname!, description: location!);
+                    
                     let eventModel = EventModel(json: eventDictionary!)
-                    self.eventList.append(eventModel!)
+                    
+                    //for j in 0...5 {
+                        //calc date
+                        //with future date!
+//                        let eventModel = EventModel(eventname: _name ?? "", _start: start ?? "", _buyin: buyin ?? 0, _fee: fee ?? 0, _location: location ?? "", _type: type ?? "", _stack: stack ?? 0, _levels: levels ?? 0, _rebuys: rebuys ?? false)
+//
+                        self.eventList.append(eventModel!)
+                    //}
                 }
                 
                 self.collectionView.reloadData()

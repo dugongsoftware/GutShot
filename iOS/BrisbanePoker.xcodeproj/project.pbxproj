@@ -19,6 +19,7 @@
 		0166A1E3224E406D00A89AAC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166A1E2224E406D00A89AAC /* HeaderView.swift */; };
 		0166A1E9224E5AD000A89AAC /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166A1E8224E5AD000A89AAC /* StretchyHeaderLayout.swift */; };
 		0166A1ED224F2F6800A89AAC /* EventListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166A1EC224F2F6800A89AAC /* EventListController.swift */; };
+		469746522254279100BAC2FE /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469746512254279100BAC2FE /* EventDetailsViewModel.swift */; };
 		5AB2E4908B593AE094B3937B /* Pods_BrisbanePoker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C35AF2C434E45F74A53F603 /* Pods_BrisbanePoker.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		0166A1E8224E5AD000A89AAC /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
 		0166A1EC224F2F6800A89AAC /* EventListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventListController.swift; path = ../EventListController.swift; sourceTree = "<group>"; };
 		3F6B84B723E20AFAF60E126A /* Pods-BrisbanePoker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrisbanePoker.debug.xcconfig"; path = "Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker.debug.xcconfig"; sourceTree = "<group>"; };
+		469746512254279100BAC2FE /* EventDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewModel.swift; sourceTree = "<group>"; };
 		6C35AF2C434E45F74A53F603 /* Pods_BrisbanePoker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrisbanePoker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9888000C372C98C972FC355 /* Pods-BrisbanePoker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrisbanePoker.release.xcconfig"; path = "Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 			children = (
 				0166A1DC224E404300A89AAC /* EventModel.swift */,
 				0166A1E0224E405F00A89AAC /* StoredEvents.swift */,
+				469746512254279100BAC2FE /* EventDetailsViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				0166A1DB224E403C00A89AAC /* EventListCell.swift in Sources */,
 				0166A1E9224E5AD000A89AAC /* StretchyHeaderLayout.swift in Sources */,
 				0166A1E1224E405F00A89AAC /* StoredEvents.swift in Sources */,
+				469746522254279100BAC2FE /* EventDetailsViewModel.swift in Sources */,
 				0166A1DD224E404300A89AAC /* EventModel.swift in Sources */,
 				0166A1C7224E3F4A00A89AAC /* AppDelegate.swift in Sources */,
 				0128174A224F56A100F78D21 /* EventDetailController.swift in Sources */,
