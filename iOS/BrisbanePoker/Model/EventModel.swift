@@ -48,12 +48,4 @@ class EventModel {
 //        self.rebuys = _rebuys
 //    }
 //    
-    func nextDate(key: String, value: String) -> Date {
-        //key as "weekly"
-        //value as 1
-        //should return Monday
-        
-        let currentDate = Date()
-        return currentDate
-    }
 }

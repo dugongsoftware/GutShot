@@ -17,9 +17,5 @@ class EventDetailsViewModel {
         _name = name;
         _description = description;
         _start = start
-
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-//        _start = formatter.date(from: start)!
     }
 }

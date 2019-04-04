@@ -152,6 +152,19 @@ extension EventListController {
                         }
                     }
                     
+                    if (frequency == "once") {
+                        let formatter = DateFormatter()
+                        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+                        let f_value = eventDictionary!["f_value"] as? String
+                        let _start = formatter.date(from: f_value!)
+                        
+                        let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: location!, start: _start!)
+                        
+                        self.eventDetailsList.append(eventDetailsViewModel)
+                    }
+                    
+                    self.eventDetailsList = self.eventDetailsList.sorted(by: {$0._start.timeIntervalSince1970 < $1._start.timeIntervalSince1970})
+                    
                     //let eventModel = EventModel(json: eventDictionary!)
                     //self.eventList.append(eventModel!)
                 }
