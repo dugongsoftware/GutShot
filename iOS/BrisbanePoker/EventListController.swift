@@ -65,9 +65,17 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     
     var selectedEvent: EventDetailsViewModel?
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let indexData = eventList[indexPath.row]
+        let indexData = eventDetailsList[indexPath.row]
         self.selectedEvent = indexData
-        pushToEventDetailController()
+        //pushToEventDetailController()
+        
+        let _message = indexData._name;
+        let alert = UIAlertController(title: "Would you like to register?", message: _message, preferredStyle: .alert)
+        
+        //alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: "Call", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Fold", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     fileprivate func pushToEventDetailController() -> Void {
@@ -78,7 +86,8 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
             //vc.selectedEvent = selectedEvent
         }
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        //self.navigationController?.pushViewController(vc, animated: true)
+    
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
