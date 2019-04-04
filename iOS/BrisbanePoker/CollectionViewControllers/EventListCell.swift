@@ -44,14 +44,14 @@ class EventListCell: UICollectionViewCell {
     
     let dateLabel: UILabel = {
         var label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 8)
+        label.font = UIFont.systemFont(ofSize: 13)
         label.text = "Date: "
         return label
     }()
     
     let addressLabel: UILabel = {
         var label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 8)
+        label.font = UIFont.systemFont(ofSize: 13)
         label.text = "Address: "
         return label
     }()

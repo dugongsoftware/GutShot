@@ -60,7 +60,7 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     
     @objc func tapDetected() {
         self.selectedEvent = eventList[0]
-        pushToEventDetailController()
+        //pushToEventDetailController()
     }
     
     var selectedEvent: EventDetailsViewModel?
@@ -138,8 +138,6 @@ extension EventListController {
                         
                         let nextEvent = calendar.nextDate(after: Date(), matching: _components, matchingPolicy: .nextTimePreservingSmallerComponents)
                         
-                        //print(nextEvent)
-                        
                         for i in 0...5 {
                             var dateComponent = DateComponents()
                             dateComponent.day = 7 * i
@@ -152,9 +150,7 @@ extension EventListController {
                         }
                     }
                     
-                    
                     //let eventModel = EventModel(json: eventDictionary!)
-                    
                     //self.eventList.append(eventModel!)
                 }
                 
