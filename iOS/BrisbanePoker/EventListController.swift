@@ -59,11 +59,11 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     @objc func tapDetected() {
-       self.selectedEvent = eventList[0]
+        self.selectedEvent = eventList[0]
         pushToEventDetailController()
     }
     
-    var selectedEvent: EventModel?
+    var selectedEvent: EventDetailsViewModel?
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let indexData = eventList[indexPath.row]
         self.selectedEvent = indexData
@@ -72,9 +72,12 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     
     fileprivate func pushToEventDetailController() -> Void {
         let vc = EventDetailController()
+        
+        //TODO: LOAD FULL EVENT
         if let selectedEvent = selectedEvent {
-            vc.selectedEvent = selectedEvent
+            //vc.selectedEvent = selectedEvent
         }
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -126,31 +129,33 @@ extension EventListController {
                     //let start = eventDictionary!["start"] as? String
                     
                     let frequency = eventDictionary!["frequency"] as? String
-                    
-                    if (frequency == "weekly") {
 
+                    if (frequency == "weekly") {
+                        
                         let calendar = Calendar(identifier: .gregorian)
-                        let weekday = 1 //eventDictionary!["f_value"] as? Int
+                        let weekday = eventDictionary!["f_value"] as? Int
                         let _components = DateComponents(calendar: calendar, weekday: weekday)
                         
                         let nextEvent = calendar.nextDate(after: Date(), matching: _components, matchingPolicy: .nextTimePreservingSmallerComponents)
                         
-                        print(nextEvent)
+                        //print(nextEvent)
+                        
+                        for i in 0...5 {
+                            var dateComponent = DateComponents()
+                            dateComponent.day = 7 * i
+                            
+                            let futureDate = Calendar.current.date(byAdding: dateComponent, to: nextEvent!)
+                            
+                            let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: location!, start: futureDate!)
+                            
+                            self.eventDetailsList.append(eventDetailsViewModel)
+                        }
                     }
                     
                     
+                    //let eventModel = EventModel(json: eventDictionary!)
                     
-                    let eventDetails = EventDetailsViewModel(name: eventname!, description: location!, start: "2019-04-29 18:30");
-                    
-                    let eventModel = EventModel(json: eventDictionary!)
-                    
-                    //for j in 0...5 {
-                        //calc date
-                        //with future date!
-//                        let eventModel = EventModel(eventname: _name ?? "", _start: start ?? "", _buyin: buyin ?? 0, _fee: fee ?? 0, _location: location ?? "", _type: type ?? "", _stack: stack ?? 0, _levels: levels ?? 0, _rebuys: rebuys ?? false)
-//
-                        self.eventList.append(eventModel!)
-                    //}
+                    //self.eventList.append(eventModel!)
                 }
                 
                 self.collectionView.reloadData()

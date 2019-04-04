@@ -13,12 +13,13 @@ class EventDetailsViewModel {
     let _description: String
     let _start: Date
     
-    init(name: String, description: String, start: String) {
+    init(name: String, description: String, start: Date) {
         _name = name;
         _description = description;
+        _start = start
 
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        _start = formatter.date(from: start)!
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+//        _start = formatter.date(from: start)!
     }
 }

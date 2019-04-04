@@ -9,5 +9,7 @@
 class StoredEvents {
     private init() { }
     static let sharedInstance = StoredEvents()
-    var collection = [EventModel]()
+    
+    //var collection = [EventModel]()
+    var collection = [EventDetailsViewModel]()
 }
