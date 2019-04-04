@@ -125,7 +125,22 @@ extension EventListController {
                     let rebuys = eventDictionary!["rebuys"] as? Bool
                     //let start = eventDictionary!["start"] as? String
                     
-                    let eventDetails = EventDetailsViewModel(name: eventname!, description: location!);
+                    let frequency = eventDictionary!["frequency"] as? String
+                    
+                    if (frequency == "weekly") {
+
+                        let calendar = Calendar(identifier: .gregorian)
+                        let weekday = 1 //eventDictionary!["f_value"] as? Int
+                        let _components = DateComponents(calendar: calendar, weekday: weekday)
+                        
+                        let nextEvent = calendar.nextDate(after: Date(), matching: _components, matchingPolicy: .nextTimePreservingSmallerComponents)
+                        
+                        print(nextEvent)
+                    }
+                    
+                    
+                    
+                    let eventDetails = EventDetailsViewModel(name: eventname!, description: location!, start: "2019-04-29 18:30");
                     
                     let eventModel = EventModel(json: eventDictionary!)
                     
