@@ -1,0 +1,6 @@
+framework module Pods_BrisbanePoker {
+  umbrella header "Pods-BrisbanePoker-umbrella.h"
+
+  export *
+  module * { export * }
+}

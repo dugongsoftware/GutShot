@@ -8,12 +8,16 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet var labLocation: UIView!
+    @IBOutlet weak var tblEvents: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tblEvents.delegate = self
+        tblEvents.dataSource = self
     }
     
 
@@ -27,4 +31,10 @@ class HomeViewController: UIViewController {
     }
     */
 
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        //
+    }
 }

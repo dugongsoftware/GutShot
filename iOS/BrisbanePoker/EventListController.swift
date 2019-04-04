@@ -19,6 +19,7 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     fileprivate let padding: CGFloat = 16
     
     var eventList = StoredEvents.sharedInstance.collection
+    var eventDetailsList = StoredEvents.sharedInstance.collection
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,12 +83,14 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return eventList.count
+        //return eventList.count
+        return eventDetailsList.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! EventListCell
-        cell.cellDetail = eventList[indexPath.row]
+        //cell.cellDetail = eventList[indexPath.row]
+        cell.cellDetail = eventDetailsList[indexPath.row]
         return cell
     }
     

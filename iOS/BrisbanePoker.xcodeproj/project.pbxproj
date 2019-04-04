@@ -225,7 +225,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -238,7 +238,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BrisbanePoker/Pods-BrisbanePoker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -401,7 +401,7 @@
 		};
 		0166A1D6224E3F4B00A89AAC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46564C46AD3B93AF7F9BD9C8 /* Pods-BrisbanePoker.debug.xcconfig */;
+			baseConfigurationReference = 3F6B84B723E20AFAF60E126A /* Pods-BrisbanePoker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -420,7 +420,7 @@
 		};
 		0166A1D7224E3F4B00A89AAC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F84FF6F458ADF03CC11F90CE /* Pods-BrisbanePoker.release.xcconfig */;
+			baseConfigurationReference = C9888000C372C98C972FC355 /* Pods-BrisbanePoker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
