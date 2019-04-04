@@ -126,7 +126,7 @@ extension EventListController {
                     let stack = eventDictionary!["stack"] as? Double
                     let levels = eventDictionary!["levels"] as? Double
                     let rebuys = eventDictionary!["rebuys"] as? Bool
-                    //let start = eventDictionary!["start"] as? String
+                    let start = eventDictionary!["start"] as? String
                     
                     let frequency = eventDictionary!["frequency"] as? String
 
@@ -141,6 +141,8 @@ extension EventListController {
                         for i in 0...5 {
                             var dateComponent = DateComponents()
                             dateComponent.day = 7 * i
+                            dateComponent.hour = 18
+                            dateComponent.minute = 30
                             
                             let futureDate = Calendar.current.date(byAdding: dateComponent, to: nextEvent!)
                             

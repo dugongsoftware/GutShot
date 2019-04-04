@@ -21,7 +21,7 @@ class EventListCell: UICollectionViewCell {
         eventNameLabel.text = detail._name
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        dateFormatter.dateFormat = "EEEE, MMM d h:mm a" //"yyyy/MM/dd hh:mm"
         
         dateLabel.text = dateFormatter.string(from: detail._start)
         addressLabel.text = detail._description
