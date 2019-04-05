@@ -67,12 +67,12 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let indexData = eventDetailsList[indexPath.row]
         self.selectedEvent = indexData
+        
         //pushToEventDetailController()
         
-        let _message = indexData._name;
+        let _message = "FEATURE COMING SOON " + indexData._name;
         let alert = UIAlertController(title: "Would you like to register?", message: _message, preferredStyle: .alert)
         
-        //alert.addAction(UIAlertAction(title: "OK", style: .default))
         alert.addAction(UIAlertAction(title: "Call", style: UIAlertAction.Style.default, handler: nil))
         alert.addAction(UIAlertAction(title: "Fold", style: UIAlertAction.Style.cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -87,7 +87,6 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
         }
         
         //self.navigationController?.pushViewController(vc, animated: true)
-    
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -155,7 +154,7 @@ extension EventListController {
                             
                             let futureDate = Calendar.current.date(byAdding: dateComponent, to: nextEvent!)
                             
-                            let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: location!, start: futureDate!)
+                            let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: location!, start: futureDate!, buyIn: buyin!, fee: fee!)
                             
                             self.eventDetailsList.append(eventDetailsViewModel)
                         }
@@ -167,7 +166,7 @@ extension EventListController {
                         let f_value = eventDictionary!["f_value"] as? String
                         let _start = formatter.date(from: f_value!)
                         
-                        let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: location!, start: _start!)
+                        let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: location!, start: _start!, buyIn: buyin!, fee: fee!)
                         
                         self.eventDetailsList.append(eventDetailsViewModel)
                     }

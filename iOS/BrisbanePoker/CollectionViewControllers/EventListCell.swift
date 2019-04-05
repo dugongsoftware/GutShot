@@ -18,7 +18,7 @@ class EventListCell: UICollectionViewCell {
     
     fileprivate func setupCellDetails() {
         guard let detail = self.cellDetail else {return}
-        eventNameLabel.text = detail._name
+        eventTitleLabel.text = detail._name
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMM d h:mm a" //"yyyy/MM/dd hh:mm"
@@ -36,9 +36,9 @@ class EventListCell: UICollectionViewCell {
         return iv
     }()
     
-    let eventNameLabel: UILabel = {
+    let eventTitleLabel: UILabel = {
         var label = UILabel()
-        label.text = "Event Name"
+        label.text = "Event title"
         return label
     }()
     
@@ -65,15 +65,14 @@ class EventListCell: UICollectionViewCell {
         addSubview(cellImageView)
         cellImageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 90, height: 0)
         
-        addSubview(eventNameLabel)
-        eventNameLabel.anchor(top: topAnchor, left: cellImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 5, width: 0, height: 20)
+        addSubview(eventTitleLabel)
+        eventTitleLabel.anchor(top: topAnchor, left: cellImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 5, width: 0, height: 20)
         
         addSubview(dateLabel)
-        dateLabel.anchor(top: eventNameLabel.bottomAnchor, left: cellImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 5, width: 0, height: 20)
+        dateLabel.anchor(top: eventTitleLabel.bottomAnchor, left: cellImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 5, width: 0, height: 20)
         
         addSubview(addressLabel)
         addressLabel.anchor(top: dateLabel.bottomAnchor, left: cellImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 5, width: 0, height: 20)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
