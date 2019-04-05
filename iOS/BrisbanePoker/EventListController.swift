@@ -136,6 +136,7 @@ extension EventListController {
                     let rebuys = eventDictionary!["rebuys"] as? Bool
                     let start = eventDictionary!["start"] as? String
                     
+                    let start_string = start!.components(separatedBy: ":")
                     let frequency = eventDictionary!["frequency"] as? String
 
                     if (frequency == "weekly") {
@@ -149,8 +150,8 @@ extension EventListController {
                         for i in 0...5 {
                             var dateComponent = DateComponents()
                             dateComponent.day = 7 * i
-                            dateComponent.hour = 18
-                            dateComponent.minute = 30
+                            dateComponent.hour = Int(start_string[0])
+                            dateComponent.minute = Int(start_string[1])
                             
                             let futureDate = Calendar.current.date(byAdding: dateComponent, to: nextEvent!)
                             
