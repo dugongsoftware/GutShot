@@ -130,10 +130,12 @@ extension EventListController {
                     let buyin = eventDictionary!["buyin"] as? Double
                     let fee = eventDictionary!["fee"] as? Double
                     let location = eventDictionary!["location"] as? String
+                    
                     let type = eventDictionary!["type"] as? String
                     let stack = eventDictionary!["stack"] as? Double
                     let levels = eventDictionary!["levels"] as? Double
                     let rebuys = eventDictionary!["rebuys"] as? Bool
+                    
                     let start = eventDictionary!["start"] as? String
                     
                     let start_string = start!.components(separatedBy: ":")
