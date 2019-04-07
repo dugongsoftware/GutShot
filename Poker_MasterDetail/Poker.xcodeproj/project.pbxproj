@@ -16,6 +16,7 @@
 		465997742254C811009F1F34 /* PokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465997732254C811009F1F34 /* PokerTests.swift */; };
 		466FA26B2255834700AEEE8B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FA26A2255834700AEEE8B /* HomeViewController.swift */; };
 		466FE0E22259ACD20023191E /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FE0E12259ACD20023191E /* EventDetailsViewModel.swift */; };
+		466FE0E42259C0760023191E /* StoredEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FE0E32259C0760023191E /* StoredEvents.swift */; };
 		A4324CCE6209D7FCCFE90322 /* Pods_Poker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5C52E2280BABEC8EFDFF9 /* Pods_Poker.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		465997752254C811009F1F34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		466FA26A2255834700AEEE8B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		466FE0E12259ACD20023191E /* EventDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailsViewModel.swift; path = ../../../iOS/BrisbanePoker/Model/EventDetailsViewModel.swift; sourceTree = "<group>"; };
+		466FE0E32259C0760023191E /* StoredEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoredEvents.swift; path = ../../../iOS/BrisbanePoker/Model/StoredEvents.swift; sourceTree = "<group>"; };
 		F8F5C52E2280BABEC8EFDFF9 /* Pods_Poker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 		466FE0E02259ACAF0023191E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				466FE0E32259C0760023191E /* StoredEvents.swift */,
 				466FE0E12259ACD20023191E /* EventDetailsViewModel.swift */,
 			);
 			path = Models;
@@ -294,6 +297,7 @@
 				465997612254C80F009F1F34 /* DetailViewController.swift in Sources */,
 				4659975F2254C80F009F1F34 /* MasterViewController.swift in Sources */,
 				4659975D2254C80F009F1F34 /* AppDelegate.swift in Sources */,
+				466FE0E42259C0760023191E /* StoredEvents.swift in Sources */,
 				466FA26B2255834700AEEE8B /* HomeViewController.swift in Sources */,
 				466FE0E22259ACD20023191E /* EventDetailsViewModel.swift in Sources */,
 			);

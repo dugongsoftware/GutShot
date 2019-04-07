@@ -13,20 +13,18 @@ import Alamofire
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var detailViewController: DetailViewController? = nil
+    
     @IBOutlet var labLocation: UIView!
     @IBOutlet weak var tblEvents: UITableView!
     
     fileprivate let apiURL = "https://dugongsoftware.github.io/GutShotFeed/tournaments.json"
-    //private var data: [String] = []
-    
-    private var eventDetailsList = [EventDetailsViewModel]()
+    var eventDetailsList = StoredEvents.sharedInstance.collection
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let eventDetailsViewModel = EventDetailsViewModel(name: "Q&A", description: "Monday", start: Date(), buyIn: 100, fee: 10)
-        
-        self.eventDetailsList.append(eventDetailsViewModel)
+        self.requestEventList()
         
         tblEvents.delegate = self
         tblEvents.dataSource = self
@@ -51,23 +49,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")! //1.
-        let text = self.eventDetailsList[indexPath.row]._name //2.
-        cell.textLabel?.text = text //3.
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")!
+        let text = self.eventDetailsList[indexPath.row]._name
+        cell.textLabel?.text = text
         
-        return cell //4.
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-}
-
-extension HomeViewController {
     
     func requestEventList() {
         
-        //SwiftSpinner.show("Fetching events")
+        //SwiftSpinner.show("Fetching events...")
         
         Alamofire.request(apiURL).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
@@ -133,7 +128,7 @@ extension HomeViewController {
                     //self.eventList.append(eventModel!)
                 }
                 
-                //self.collectionView.reloadData()
+                self.tblEvents.reloadData()
                 //SwiftSpinner.hide()
             }
         }
