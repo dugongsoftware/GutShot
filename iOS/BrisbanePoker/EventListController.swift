@@ -15,7 +15,7 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     
     fileprivate let cellId = "cellId"
     fileprivate let headerId = "headerId"
-    fileprivate let apiURL = "https://dugongsoftware.github.io/GutShotFeed/tournaments.json"
+    fileprivate let apiURL = "https://dugongsoftware.github.io/GutShotFeed/v2/tournaments.json"
     fileprivate let padding: CGFloat = 16
     
     var eventList = StoredEvents.sharedInstance.collection
@@ -165,12 +165,18 @@ extension EventListController {
                     
                     if (frequency == "once") {
                         let formatter = DateFormatter()
-                        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+                        formatter.dateFormat = "yyyy/MM/dd"
                         let f_value = eventDictionary!["f_value"] as? String
                         let _start = formatter.date(from: f_value!)
                         
-                        if (_start! > Date()) {
-                            let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: location!, start: _start!, buyIn: buyin!, fee: fee!)
+                        var dateComponent = DateComponents()
+                        dateComponent.hour = Int(start_string[0])
+                        dateComponent.minute = Int(start_string[1])
+                        
+                        let _realStart = Calendar.current.date(byAdding: dateComponent, to: _start!)
+                        
+                        if (_realStart! > Date()) {
+                            let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: location!, start: _realStart!, buyIn: buyin!, fee: fee!)
                             
                             self.eventDetailsList.append(eventDetailsViewModel)
                         }
