@@ -9,6 +9,43 @@
 import UIKit
 import Foundation
 
+extension Calendar {
+    
+    static func fetchNextWeekDate(i: Int, weekday: Int, startTime: String) -> Date {
+        let calendar = Calendar(identifier: .gregorian)
+        let _components = DateComponents(calendar: calendar, weekday: Int(weekday))
+        let nextEvent = calendar.nextDate(after: Date(), matching: _components, matchingPolicy: .nextTimePreservingSmallerComponents)
+        let start_string = startTime.components(separatedBy: ":")
+        
+        var dateComponent = DateComponents()
+        dateComponent.day = 7 * i
+        dateComponent.hour = Int(start_string[0])
+        dateComponent.minute = Int(start_string[1])
+        guard let futureDate = Calendar.current.date(byAdding: dateComponent, to: nextEvent!) else {return Date()}
+        return futureDate
+    }
+    
+    static func fetchOneTimeDate(dateString: String, startTime: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let start = formatter.date(from: dateString)
+        let start_string = startTime.components(separatedBy: ":")
+        
+        var dateComponent = DateComponents()
+        dateComponent.hour = Int(start_string[0])
+        dateComponent.minute = Int(start_string[1])
+        
+        let realStart = Calendar.current.date(byAdding: dateComponent, to: start!)
+        
+        if (realStart! > Date()) {
+            return realStart!
+        } else {
+            return Date()
+        }
+    }
+    
+}
+
 extension UIColor {
     
     static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
@@ -28,7 +65,6 @@ struct AnchoredConstraints {
     var top, leading, bottom, trailing, width, height: NSLayoutConstraint?
 }
 
-// Reference Video: https://youtu.be/iqpAP7s3b-8
 extension UIView {
     
     func anchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat, paddingRight: CGFloat, width: CGFloat, height: CGFloat) {
@@ -98,3 +134,4 @@ extension UIView {
         }
     }
 }
+

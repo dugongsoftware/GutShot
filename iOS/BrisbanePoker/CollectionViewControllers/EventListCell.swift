@@ -10,7 +10,7 @@ import UIKit
 
 class EventListCell: UICollectionViewCell {
     
-    var cellDetail: EventDetailsViewModel? {
+    var cellDetail: EventModel? {
         didSet{
             setupCellDetails()
         }
@@ -18,14 +18,14 @@ class EventListCell: UICollectionViewCell {
     
     fileprivate func setupCellDetails() {
         guard let detail = self.cellDetail else {return}
-        eventTitleLabel.text = detail._name
-        eventDescriptionLabel.text = detail._description
+        eventTitleLabel.text = detail.name
+        eventDescriptionLabel.text = detail.description
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMM d h:mma"
         
-        dateLabel.text = dateFormatter.string(from: detail._start)
-        addressLabel.text = detail._location
+        dateLabel.text = dateFormatter.string(from: detail.start)
+        addressLabel.text = detail.location
     }
     
     let cellImageView: UIImageView = {
@@ -88,18 +88,5 @@ class EventListCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension EventListCell {
-    func formatToString(str: String) -> String {
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "HH:mm"
-        
-        let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "h:mm a"
-        
-        let date = dateFormatterGet.date(from: str)
-        return dateFormatterPrint.string(from: date!)
     }
 }

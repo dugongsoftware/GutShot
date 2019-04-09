@@ -21,7 +21,7 @@ class EventDetailController: UIViewController {
     fileprivate func setupTexts() {
         guard let event = selectedEvent else { return }
         eventNameLabel.text = event.name
-        calendarLabel.text = formatToString(str: event.start!)
+        //calendarLabel.text = formatToString(str: event.start!)
         locationLabel.text = event.location
     }
     
@@ -154,29 +154,6 @@ class EventDetailController: UIViewController {
     
 }
 
-extension EventDetailController {
-    //DATE FORMAT
-    func formatToString(str: String) -> String {
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "dd-MM-yyyy HH:mm"
-        
-        let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "MMM d, h:mm a"
-        
-        let date = dateFormatterGet.date(from: str)
-        return dateFormatterPrint.string(from: date!)
-    }
-    
-    func formatToDate(str: String) -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
-        if let formattedDate = dateFormatter.date(from: str) {
-            return formattedDate
-        } else {
-            return Date()
-        }
-    }
-}
 
 extension EventDetailController {
     
@@ -184,14 +161,14 @@ extension EventDetailController {
     fileprivate func openGoogleMaps() {
         if UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
 
-            let address = selectedEvent?.location!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            let address = selectedEvent?.location.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             let urlString = "comgooglemaps://?saddr=&daddr=" + address! + "&directionsmode=driving&zoom=17"
             
             UIApplication.shared.open(URL(string: urlString)!, options: [:])
             
         } else {
             //opening in apple maps
-            let address = selectedEvent?.location!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            let address = selectedEvent?.location.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             let urlString = "http://maps.apple.com/?daddr=" + address! + "&dirflg=r"
             
             UIApplication.shared.open(URL(string: urlString)!, options: [:])
@@ -211,9 +188,8 @@ extension EventDetailController {
                 
                 event.title = self.selectedEvent?.name
                 let strDate = self.selectedEvent?.start
-                let formattedDate = self.formatToDate(str: strDate!)
-                event.startDate = formattedDate
-                event.endDate = formattedDate
+                event.startDate = strDate
+                event.endDate = strDate
                 event.notes = self.selectedEvent?.location
                 event.calendar = eventStore.defaultCalendarForNewEvents
                 do {

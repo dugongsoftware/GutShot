@@ -18,8 +18,6 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     fileprivate let apiURL = "https://dugongsoftware.github.io/GutShotFeed/v2/tournaments.json"
     fileprivate let padding: CGFloat = 16
     
-    var eventDetailsList = [EventDetailsViewModel]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +25,6 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
         setupCollectionView()
         
         requestEventList()
-        eventDetailsList = StoredEvents.sharedInstance.collection
     }
     
     fileprivate func setupCollectionViewLayout() {
@@ -63,16 +60,16 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
         //pushToEventDetailController()
     }
     
-    var selectedEvent: EventDetailsViewModel?
+    var selectedEvent: EventModel?
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let indexData = eventDetailsList[indexPath.row]
+        let indexData = StoredEvents.sharedInstance.collection[indexPath.row]
         self.selectedEvent = indexData
         
         //pushToEventDetailController()
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM d h:mma"
         
-        let _message = "FEATURE COMING SOON " + indexData._name + " starting at " + formatter.string(from: indexData._start)
+        let _message = "FEATURE COMING SOON " + indexData.name + " starting at " + formatter.string(from: indexData.start)
         let alert = UIAlertController(title: "Would you like to register?", message: _message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Call", style: UIAlertAction.Style.default, handler: nil))
@@ -81,14 +78,15 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     fileprivate func pushToEventDetailController() -> Void {
+        /*
         let vc = EventDetailController()
         
         //TODO: LOAD FULL EVENT
         if let selectedEvent = selectedEvent {
-            //vc.selectedEvent = selectedEvent
+            vc.selectedEvent = selectedEvent
         }
         
-        //self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)*/
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -96,14 +94,12 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return eventList.count
-        return eventDetailsList.count
+        return StoredEvents.sharedInstance.collection.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! EventListCell
-        //cell.cellDetail = eventList[indexPath.row]
-        cell.cellDetail = eventDetailsList[indexPath.row]
+        cell.cellDetail = StoredEvents.sharedInstance.collection[indexPath.row]
         return cell
     }
     
@@ -122,75 +118,48 @@ extension EventListController {
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
                 let count = swiftyJsonVar.count
+                var events = [EventModel]() // temporary event-keeping array.
                 
+                //Loop through JSON entry ...
                 for i in 0...count-1 {
                     let event = swiftyJsonVar[i]
                     let eventDictionary = event.dictionaryObject
-                    
-                    //do the rest of the properties from json
-                    let eventname = eventDictionary!["name"] as? String
-                    let description = eventDictionary!["description"] as? String
-                    let buyin = eventDictionary!["buyin"] as? Double
-                    let fee = eventDictionary!["fee"] as? Double
-                    let location = eventDictionary!["location"] as? String
-                    
-                    //let type = eventDictionary!["type"] as? String
-                    //let stack = eventDictionary!["stack"] as? Double
-                    //let levels = eventDictionary!["levels"] as? Double
-                    //let rebuys = eventDictionary!["rebuys"] as? Bool
-                    
-                    let start = eventDictionary!["start"] as? String
-                    
-                    let start_string = start!.components(separatedBy: ":")
-                    let frequency = eventDictionary!["frequency"] as? String
-
-                    if (frequency == "weekly") {
-                        
-                        let calendar = Calendar(identifier: .gregorian)
-                        let weekday = eventDictionary!["f_value"] as? Int
-                        let _components = DateComponents(calendar: calendar, weekday: weekday)
-                        
-                        let nextEvent = calendar.nextDate(after: Date(), matching: _components, matchingPolicy: .nextTimePreservingSmallerComponents)
-                        
-                        for i in 0...5 {
-                            var dateComponent = DateComponents()
-                            dateComponent.day = 7 * i
-                            dateComponent.hour = Int(start_string[0])
-                            dateComponent.minute = Int(start_string[1])
-                            
-                            let futureDate = Calendar.current.date(byAdding: dateComponent, to: nextEvent!)
-                            
-                            let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: description!, start: futureDate!, buyIn: buyin!, fee: fee!, location: location!)
-                            
-                            self.eventDetailsList.append(eventDetailsViewModel)
-                        }
-                    }
-                    
-                    if (frequency == "once") {
-                        let formatter = DateFormatter()
-                        formatter.dateFormat = "yyyy/MM/dd"
-                        let f_value = eventDictionary!["f_value"] as? String
-                        let _start = formatter.date(from: f_value!)
-                        
-                        var dateComponent = DateComponents()
-                        dateComponent.hour = Int(start_string[0])
-                        dateComponent.minute = Int(start_string[1])
-                        
-                        let _realStart = Calendar.current.date(byAdding: dateComponent, to: _start!)
-                        
-                        if (_realStart! > Date()) {
-                            let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: description!, start: _realStart!, buyIn: buyin!, fee: fee!, location: location!)
-                            
-                            self.eventDetailsList.append(eventDetailsViewModel)
-                        }
-                    }
-                    
-                    StoredEvents.sharedInstance.collection = self.eventDetailsList.sorted(by: {$0._start.timeIntervalSince1970 < $1._start.timeIntervalSince1970})
+                    let generatedEvents = self.generateEvents(dictionary: eventDictionary!) // generate Events based on if it's weekly, once, etc.
+                    events += generatedEvents // add to event-keeping array
                 }
-                
+                StoredEvents.sharedInstance.collection = events.sorted(by: {$0.start.timeIntervalSince1970 < $1.start.timeIntervalSince1970}) //store to master array, sorted by date
                 self.collectionView.reloadData()
                 SwiftSpinner.hide()
             }
         }
     }
+    
+    // This function will determine if passed json entry is a weekly or a one-time event and generate a single or multiple events accordingly.
+    fileprivate func generateEvents(dictionary: [String: Any]) -> [EventModel] {
+        var eventCollection = [EventModel]()
+        let frequency = dictionary["frequency"] as! String
+        let startTime = dictionary["start"] as! String
+
+        switch frequency {
+        // EVENT IS A WEEKLY EVENT. Will return 5 events.
+        case "weekly":
+            let f_value = dictionary["f_value"] as! Int
+            for i in 0...4 {
+                let eventDate = Calendar.fetchNextWeekDate(i: i, weekday: f_value, startTime: startTime)
+                if let newEvent = EventModel(json: dictionary, startDate: eventDate) {
+                    eventCollection.append(newEvent)
+                }
+            }
+        // EVENT IS A ONE-TIME EVENT. Will return 1 event.
+        default:
+            let f_value = dictionary["f_value"] as! String
+            let eventDate = Calendar.fetchOneTimeDate(dateString: f_value, startTime: startTime)
+            if let newEvent = EventModel(json: dictionary, startDate: eventDate) {
+                eventCollection.append(newEvent)
+            }
+        }
+        return eventCollection
+    }
+
+    
 }
