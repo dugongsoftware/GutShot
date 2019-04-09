@@ -18,8 +18,7 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     fileprivate let apiURL = "https://dugongsoftware.github.io/GutShotFeed/v2/tournaments.json"
     fileprivate let padding: CGFloat = 16
     
-    var eventList = StoredEvents.sharedInstance.collection
-    var eventDetailsList = StoredEvents.sharedInstance.collection
+    var eventDetailsList = [EventDetailsViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +27,7 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
         setupCollectionView()
         
         requestEventList()
+        eventDetailsList = StoredEvents.sharedInstance.collection
     }
     
     fileprivate func setupCollectionViewLayout() {
@@ -59,7 +59,7 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     @objc func tapDetected() {
-        self.selectedEvent = eventList[0]
+        //self.selectedEvent = eventList[0]
         //pushToEventDetailController()
     }
     
@@ -69,8 +69,10 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
         self.selectedEvent = indexData
         
         //pushToEventDetailController()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, MMM d h:mma"
         
-        let _message = "FEATURE COMING SOON " + indexData._name;
+        let _message = "FEATURE COMING SOON " + indexData._name + " starting at " + formatter.string(from: indexData._start)
         let alert = UIAlertController(title: "Would you like to register?", message: _message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Call", style: UIAlertAction.Style.default, handler: nil))
@@ -127,14 +129,15 @@ extension EventListController {
                     
                     //do the rest of the properties from json
                     let eventname = eventDictionary!["name"] as? String
+                    let description = eventDictionary!["description"] as? String
                     let buyin = eventDictionary!["buyin"] as? Double
                     let fee = eventDictionary!["fee"] as? Double
                     let location = eventDictionary!["location"] as? String
                     
-                    let type = eventDictionary!["type"] as? String
-                    let stack = eventDictionary!["stack"] as? Double
-                    let levels = eventDictionary!["levels"] as? Double
-                    let rebuys = eventDictionary!["rebuys"] as? Bool
+                    //let type = eventDictionary!["type"] as? String
+                    //let stack = eventDictionary!["stack"] as? Double
+                    //let levels = eventDictionary!["levels"] as? Double
+                    //let rebuys = eventDictionary!["rebuys"] as? Bool
                     
                     let start = eventDictionary!["start"] as? String
                     
@@ -157,7 +160,7 @@ extension EventListController {
                             
                             let futureDate = Calendar.current.date(byAdding: dateComponent, to: nextEvent!)
                             
-                            let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: location!, start: futureDate!, buyIn: buyin!, fee: fee!)
+                            let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: description!, start: futureDate!, buyIn: buyin!, fee: fee!, location: location!)
                             
                             self.eventDetailsList.append(eventDetailsViewModel)
                         }
@@ -176,16 +179,13 @@ extension EventListController {
                         let _realStart = Calendar.current.date(byAdding: dateComponent, to: _start!)
                         
                         if (_realStart! > Date()) {
-                            let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: location!, start: _realStart!, buyIn: buyin!, fee: fee!)
+                            let eventDetailsViewModel = EventDetailsViewModel(name: eventname!, description: description!, start: _realStart!, buyIn: buyin!, fee: fee!, location: location!)
                             
                             self.eventDetailsList.append(eventDetailsViewModel)
                         }
                     }
                     
-                    self.eventDetailsList = self.eventDetailsList.sorted(by: {$0._start.timeIntervalSince1970 < $1._start.timeIntervalSince1970})
-                    
-                    //let eventModel = EventModel(json: eventDictionary!)
-                    //self.eventList.append(eventModel!)
+                    StoredEvents.sharedInstance.collection = self.eventDetailsList.sorted(by: {$0._start.timeIntervalSince1970 < $1._start.timeIntervalSince1970})
                 }
                 
                 self.collectionView.reloadData()

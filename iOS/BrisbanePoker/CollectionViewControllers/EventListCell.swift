@@ -19,12 +19,13 @@ class EventListCell: UICollectionViewCell {
     fileprivate func setupCellDetails() {
         guard let detail = self.cellDetail else {return}
         eventTitleLabel.text = detail._name
+        eventDescriptionLabel.text = detail._description
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, MMM d h:mma" //"yyyy/MM/dd hh:mm"
+        dateFormatter.dateFormat = "EEEE, MMM d h:mma"
         
         dateLabel.text = dateFormatter.string(from: detail._start)
-        addressLabel.text = detail._description
+        addressLabel.text = detail._location
     }
     
     let cellImageView: UIImageView = {
@@ -39,6 +40,13 @@ class EventListCell: UICollectionViewCell {
     let eventTitleLabel: UILabel = {
         var label = UILabel()
         label.text = "Event title: "
+        return label
+    }()
+    
+    let eventDescriptionLabel: UILabel = {
+        var label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.text = "Event description: "
         return label
     }()
     
@@ -68,8 +76,11 @@ class EventListCell: UICollectionViewCell {
         addSubview(eventTitleLabel)
         eventTitleLabel.anchor(top: topAnchor, left: cellImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 5, width: 0, height: 20)
         
+        addSubview(eventDescriptionLabel)
+        eventDescriptionLabel.anchor(top: eventTitleLabel.bottomAnchor, left: cellImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 5, width: 0, height: 20)
+        
         addSubview(dateLabel)
-        dateLabel.anchor(top: eventTitleLabel.bottomAnchor, left: cellImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 5, width: 0, height: 20)
+        dateLabel.anchor(top: eventDescriptionLabel.bottomAnchor, left: cellImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 5, width: 0, height: 20)
         
         addSubview(addressLabel)
         addressLabel.anchor(top: dateLabel.bottomAnchor, left: cellImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 5, width: 0, height: 20)
