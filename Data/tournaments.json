@@ -15,6 +15,7 @@
       "stack": 40000,
       "frequency": "weekly",
       "f_value": 2,
+      "disableEventDates": [],
       "imageURL": "https://regmedia.co.uk/2017/01/13/poker.jpg?x=442&y=293&crop=1" 
   },
   {
@@ -33,6 +34,7 @@
       "stack": 40000,
       "frequency": "weekly",
       "f_value": 5,
+      "disableEventDates": ["2019/04/11", "2019/04/25"],
       "imageURL": "https://regmedia.co.uk/2017/01/13/poker.jpg?x=442&y=293&crop=1" 
   },  
   {
@@ -51,6 +53,7 @@
       "stack": 40000,
       "frequency": "once",
       "f_value": "2019/04/05",
+      "disableEventDates": [],
       "imageURL": "https://regmedia.co.uk/2017/01/13/poker.jpg?x=442&y=293&crop=1" 
   },
   {
@@ -69,6 +72,7 @@
       "stack": 40000,
       "frequency": "once",
       "f_value": "2019/04/07",
+      "disableEventDates": [],
       "imageURL": "https://regmedia.co.uk/2017/01/13/poker.jpg?x=442&y=293&crop=1" 
   },
   {
@@ -87,6 +91,7 @@
       "stack": 25000,
       "frequency": "weekly",
       "f_value": 5,
+      "disableEventDates": [],
       "imageURL": "https://regmedia.co.uk/2017/01/13/poker.jpg?x=442&y=293&crop=1" 
   },
   {
@@ -103,6 +108,7 @@
       "stack": 40000,
       "frequency": "once",
       "f_value": "2019/04/11",
+      "disableEventDates": [],
       "imageURL": ""
   },
   {
@@ -121,6 +127,7 @@
       "stack": 40000,
       "frequency": "once",
       "f_value": "2019/04/11",
+      "disableEventDates": [],
       "imageURL": ""
   },
   {
@@ -139,6 +146,7 @@
       "stack": 40000,
       "frequency": "once",
       "f_value": "2019/04/21",
+      "disableEventDates": [],
       "imageURL": ""
   }
 ]
