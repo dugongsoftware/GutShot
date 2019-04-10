@@ -10,13 +10,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BrisbanePoker/CollectionViewControllers/EventListCell.swift"
-            timestampString = "576576861.375229"
+            timestampString = "576578342.648839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
             landmarkName = "setupCellDetails()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrisbanePoker/CustomImageView.swift"
+            timestampString = "576577288.0411119"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "loadImage(urlString:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BrisbanePoker.CustomImageView.loadImage(urlString: Swift.String) -&gt; ()"
+                  moduleName = "BrisbanePoker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ai/Desktop/GutShot/iOS/BrisbanePoker/CustomImageView.swift"
+                  timestampString = "576577288.04811"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1134">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BrisbanePoker.CustomImageView.loadImage(urlString: Swift.String) -&gt; ()"
+                  moduleName = "BrisbanePoker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ai/Desktop/GutShot/iOS/BrisbanePoker/CustomImageView.swift"
+                  timestampString = "576577288.051617"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1521">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

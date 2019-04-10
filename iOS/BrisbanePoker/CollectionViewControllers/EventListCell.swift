@@ -28,6 +28,8 @@ class EventListCell: UICollectionViewCell {
 
         if detail.imageURL != "" {
             cellImageView.loadImage(urlString: detail.imageURL)
+        } else {
+            cellImageView.image = #imageLiteral(resourceName: "POKER")
         }
         
     }
@@ -36,7 +38,6 @@ class EventListCell: UICollectionViewCell {
         var iv = CustomImageView()
         iv.image = #imageLiteral(resourceName: "POKER")
         iv.contentMode = .scaleAspectFill
-        //iv.layer.cornerRadius = 5
         iv.clipsToBounds = true
         return iv
     }()
