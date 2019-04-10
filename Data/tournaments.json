@@ -14,7 +14,8 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "weekly",
-      "f_value": 2
+      "f_value": 2,
+      "imageURL": "https://images.theconversation.com/files/213908/original/file-20180409-114076-691a0s.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip" 
   },
   {
       "fee": 10, 
