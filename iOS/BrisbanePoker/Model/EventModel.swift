@@ -15,6 +15,7 @@ class EventModel {
     let fee: Double
     let location: String
     let start: Date
+    let imageURL: String
  
     init?(json: [String: Any], startDate: Date) {
         // 1
@@ -23,6 +24,7 @@ class EventModel {
         self.buyIn = json["buyin"] as! Double
         self.fee = json["fee"] as! Double
         self.location = json["location"] as! String
+        self.imageURL = json["imageURL"] as! String
 
         self.start = startDate
     }

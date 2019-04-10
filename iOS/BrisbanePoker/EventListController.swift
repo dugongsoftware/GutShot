@@ -15,7 +15,7 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     
     fileprivate let cellId = "cellId"
     fileprivate let headerId = "headerId"
-    fileprivate let apiURL = "https://dugongsoftware.github.io/GutShotFeed/v2/tournaments.json"
+    fileprivate let apiURL = "https://dugongsoftware.github.io/GutShot/Data/tournaments.json"
     fileprivate let padding: CGFloat = 16
     
     override func viewDidLoad() {

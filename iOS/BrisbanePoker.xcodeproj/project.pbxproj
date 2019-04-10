@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0128174A224F56A100F78D21 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01281749224F56A100F78D21 /* EventDetailController.swift */; };
+		015371D3225DD2BA0074CDAB /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015371D2225DD2BA0074CDAB /* CustomImageView.swift */; };
 		0166A1C7224E3F4A00A89AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166A1C6224E3F4A00A89AAC /* AppDelegate.swift */; };
 		0166A1CC224E3F4A00A89AAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0166A1CA224E3F4A00A89AAC /* Main.storyboard */; };
 		0166A1CE224E3F4B00A89AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0166A1CD224E3F4B00A89AAC /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		01281749224F56A100F78D21 /* EventDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
+		015371D2225DD2BA0074CDAB /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		0166A1C3224E3F4A00A89AAC /* BrisbanePoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrisbanePoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0166A1C6224E3F4A00A89AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0166A1CB224E3F4A00A89AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				0166A1CA224E3F4A00A89AAC /* Main.storyboard */,
 				0166A1CD224E3F4B00A89AAC /* Assets.xcassets */,
 				0166A1CF224E3F4B00A89AAC /* LaunchScreen.storyboard */,
+				015371D2225DD2BA0074CDAB /* CustomImageView.swift */,
 				0166A1DE224E404900A89AAC /* extensions.swift */,
 				463512A222571FDE0056F674 /* GoogleService-Info.plist */,
 				0166A1D2224E3F4B00A89AAC /* Info.plist */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0166A1DF224E404900A89AAC /* extensions.swift in Sources */,
+				015371D3225DD2BA0074CDAB /* CustomImageView.swift in Sources */,
 				0166A1DB224E403C00A89AAC /* EventListCell.swift in Sources */,
 				0166A1E1224E405F00A89AAC /* StoredEvents.swift in Sources */,
 				0166A1DD224E404300A89AAC /* EventModel.swift in Sources */,

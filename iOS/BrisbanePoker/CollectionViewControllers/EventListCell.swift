@@ -23,13 +23,17 @@ class EventListCell: UICollectionViewCell {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMM d h:mma"
-        
         dateLabel.text = dateFormatter.string(from: detail.start)
         addressLabel.text = detail.location
+
+        if detail.imageURL != "" {
+            cellImageView.loadImage(urlString: detail.imageURL)
+        }
+        
     }
     
-    let cellImageView: UIImageView = {
-        var iv = UIImageView()
+    let cellImageView: CustomImageView = {
+        var iv = CustomImageView()
         iv.image = #imageLiteral(resourceName: "POKER")
         iv.contentMode = .scaleAspectFill
         //iv.layer.cornerRadius = 5
