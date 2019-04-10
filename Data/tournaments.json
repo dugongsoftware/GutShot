@@ -32,7 +32,8 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "weekly",
-      "f_value": 5
+      "f_value": 5,
+      "imageURL": "https://images.theconversation.com/files/213908/original/file-20180409-114076-691a0s.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip" 
   },  
   {
       "fee": 0, 
@@ -49,7 +50,8 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "once",
-      "f_value": "2019/04/05"
+      "f_value": "2019/04/05",
+      "imageURL": "https://images.theconversation.com/files/213908/original/file-20180409-114076-691a0s.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip" 
   },
   {
       "fee": 0, 
@@ -66,7 +68,8 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "once",
-      "f_value": "2019/04/07"
+      "f_value": "2019/04/07",
+      "imageURL": "https://images.theconversation.com/files/213908/original/file-20180409-114076-691a0s.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip" 
   },
   {
       "fee": 0, 
@@ -83,7 +86,8 @@
       "type": "No Limit Texas Holdem", 
       "stack": 25000,
       "frequency": "weekly",
-      "f_value": 5
+      "f_value": 5,
+      "imageURL": "https://images.theconversation.com/files/213908/original/file-20180409-114076-691a0s.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip" 
   },
   {
       "fee": 0, 
@@ -98,7 +102,8 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "once",
-      "f_value": "2019/04/11"
+      "f_value": "2019/04/11",
+      "imageURL": ""
   },
   {
       "fee": 5, 
@@ -115,7 +120,8 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "once",
-      "f_value": "2019/04/11"
+      "f_value": "2019/04/11",
+      "imageURL": ""
   },
   {
       "fee": 10, 
@@ -132,6 +138,7 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "once",
-      "f_value": "2019/04/21"
+      "f_value": "2019/04/21",
+      "imageURL": ""
   }
 ]
