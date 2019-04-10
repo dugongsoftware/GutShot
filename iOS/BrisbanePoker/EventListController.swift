@@ -154,7 +154,7 @@ extension EventListController {
         default:
             let f_value = dictionary["f_value"] as! String
             let eventDate = Calendar.fetchOneTimeDate(dateString: f_value, startTime: startTime)
-            if let newEvent = EventModel(json: dictionary, startDate: eventDate) {
+            if let newEvent = EventModel(json: dictionary, startDate: eventDate), eventDate > Date() { // don't add past events
                 eventCollection.append(newEvent)
             }
         }

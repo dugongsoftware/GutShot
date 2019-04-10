@@ -36,12 +36,7 @@ extension Calendar {
         dateComponent.minute = Int(start_string[1])
         
         let realStart = Calendar.current.date(byAdding: dateComponent, to: start!)
-        
-        if (realStart! > Date()) {
-            return realStart!
-        } else {
-            return Date()
-        }
+        return realStart!
     }
     
 }
