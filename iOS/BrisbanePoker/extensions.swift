@@ -41,6 +41,17 @@ extension Calendar {
     
 }
 
+extension Date {
+    
+    static func dateToString(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let dateString = formatter.string(from: date)
+        return dateString
+    }
+    
+}
+
 extension UIColor {
     
     static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
