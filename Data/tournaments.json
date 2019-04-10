@@ -103,7 +103,7 @@
       "stack": 40000,
       "frequency": "once",
       "f_value": "2019/04/11",
-      "imageURL": null
+      "imageURL": ""
   },
   {
       "fee": 5, 
@@ -121,7 +121,7 @@
       "stack": 40000,
       "frequency": "once",
       "f_value": "2019/04/11",
-      "imageURL": null
+      "imageURL": ""
   },
   {
       "fee": 10, 
@@ -139,6 +139,6 @@
       "stack": 40000,
       "frequency": "once",
       "f_value": "2019/04/21",
-      "imageURL": null
+      "imageURL": ""
   }
 ]
