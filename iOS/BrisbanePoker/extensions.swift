@@ -11,7 +11,7 @@ import Foundation
 
 extension Calendar {
     
-    static func fetchNextWeekDate(i: Int, weekday: Int, startTime: String) -> Date {
+    static func fetch5NextWeekDates(i: Int, weekday: Int, startTime: String) -> Date {
         let calendar = Calendar(identifier: .gregorian)
         let _components = DateComponents(calendar: calendar, weekday: Int(weekday))
         let nextEvent = calendar.nextDate(after: Date(), matching: _components, matchingPolicy: .nextTimePreservingSmallerComponents)

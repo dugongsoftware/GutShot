@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// Custom Image View for loading image from a given URL and caching.
 var imageCache = [String: UIImage]()
 
 class CustomImageView: UIImageView {

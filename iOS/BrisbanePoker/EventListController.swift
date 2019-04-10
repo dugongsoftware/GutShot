@@ -94,6 +94,7 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(StoredEvents.sharedInstance.collection.count)
         return StoredEvents.sharedInstance.collection.count
     }
     
@@ -139,14 +140,16 @@ extension EventListController {
         var eventCollection = [EventModel]()
         let frequency = dictionary["frequency"] as! String
         let startTime = dictionary["start"] as! String
+        let disabledEventDates = dictionary["disableEventDates"] as? [String] ?? []
 
         switch frequency {
         // EVENT IS A WEEKLY EVENT. Will return 5 events.
         case "weekly":
             let f_value = dictionary["f_value"] as! Int
-            for i in 0...4 {
-                let eventDate = Calendar.fetchNextWeekDate(i: i, weekday: f_value, startTime: startTime)
-                if let newEvent = EventModel(json: dictionary, startDate: eventDate) {
+            for i in 0...4 { // next 5 week's events will be fetched
+                let eventDate = Calendar.fetch5NextWeekDates(i: i, weekday: f_value, startTime: startTime)
+                
+                if let newEvent = EventModel(json: dictionary, startDate: eventDate), checkForDisabledEvent(eventDate: eventDate, disabledEventDates: disabledEventDates) { // check for disabled events
                     eventCollection.append(newEvent)
                 }
             }
@@ -160,6 +163,18 @@ extension EventListController {
         }
         return eventCollection
     }
-
+    
+    fileprivate func checkForDisabledEvent(eventDate: Date, disabledEventDates: [String]) -> Bool {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let dateString = formatter.string(from: eventDate)
+        print(dateString)
+        print(disabledEventDates)
+        if disabledEventDates.contains(dateString) {
+            return false
+        } else {
+            return true
+        }
+    }
     
 }
