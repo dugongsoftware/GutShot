@@ -14,7 +14,9 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "weekly",
-      "f_value": 2
+      "f_value": 2,
+      "disableEventDates": [],
+      "imageURL": "https://regmedia.co.uk/2017/01/13/poker.jpg?x=442&y=293&crop=1" 
   },
   {
       "fee": 10, 
@@ -31,7 +33,9 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "weekly",
-      "f_value": 5
+      "f_value": 5,
+      "disableEventDates": ["2019/04/11", "2019/04/25"],
+      "imageURL": "https://regmedia.co.uk/2017/01/13/poker.jpg?x=442&y=293&crop=1" 
   },  
   {
       "fee": 0, 
@@ -48,12 +52,14 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "once",
-      "f_value": "2019/04/05"
+      "f_value": "2019/04/05",
+      "disableEventDates": [],
+      "imageURL": "https://regmedia.co.uk/2017/01/13/poker.jpg?x=442&y=293&crop=1" 
   },
   {
       "fee": 0, 
       "name": "Jason's Birthday Game $1,000 GTD",
-      "description": "",
+      "description": "Jason's Birthday Game $1,000 GTD",
       "rebuys": 10,
       "addons": 10,
       "buyin": 13, 
@@ -65,12 +71,14 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "once",
-      "f_value": "2019/04/07"
+      "f_value": "2019/04/07",
+      "disableEventDates": [],
+      "imageURL": "https://regmedia.co.uk/2017/01/13/poker.jpg?x=442&y=293&crop=1" 
   },
   {
       "fee": 0, 
       "name": "Thursday Night", 
-      "description": "",
+      "description": "Thursday Night",
       "rebuys": true,
       "addons": true,
       "buyin": 13, 
@@ -82,12 +90,14 @@
       "type": "No Limit Texas Holdem", 
       "stack": 25000,
       "frequency": "weekly",
-      "f_value": 5
+      "f_value": 5,
+      "disableEventDates": [],
+      "imageURL": "https://regmedia.co.uk/2017/01/13/poker.jpg?x=442&y=293&crop=1" 
   },
   {
       "fee": 0, 
       "name": "Freeroll Event $1,000 GTD", 
-      "description": "",
+      "description": "Freeroll Event $1,000 GTD",
       "rebuys": 10,
       "addons": 10,
       "buyin": 0, 
@@ -97,12 +107,14 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "once",
-      "f_value": "2019/04/11"
+      "f_value": "2019/04/11",
+      "disableEventDates": [],
+      "imageURL": ""
   },
   {
       "fee": 5, 
       "name": "Deep Stack Event $2,000 GTD",
-      "description": "",
+      "description": "Deep Stack Event $2,000 GTD",
       "rebuys": 10,
       "addons": 10,
       "buyin": 30, 
@@ -114,12 +126,14 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "once",
-      "f_value": "2019/04/11"
+      "f_value": "2019/04/11",
+      "disableEventDates": [],
+      "imageURL": ""
   },
   {
       "fee": 10, 
       "name": "Thursday NLHE $50 + $10",
-      "description": "",
+      "description": "Thursday NLHE $50 + $10",
       "rebuys": 0,
       "addons": 0,
       "buyin": 300, 
@@ -131,6 +145,8 @@
       "type": "No Limit Texas Holdem", 
       "stack": 40000,
       "frequency": "once",
-      "f_value": "2019/04/21"
+      "f_value": "2019/04/21",
+      "disableEventDates": [],
+      "imageURL": ""
   }
 ]
