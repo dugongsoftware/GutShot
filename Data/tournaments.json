@@ -35,7 +35,7 @@
       "frequency": "weekly",
       "f_value": 5,
       "disableEventDates": ["2019/04/11", "2019/04/25"],
-      "imageURL": "https://regmedia.co.uk/2017/01/13/poker.jpg?x=442&y=293&crop=1" 
+      "imageURL": "https://dugongsoftware.github.io/GutShot/Images/QA.jpg?x=442&y=293&crop=1" 
   },  
   {
       "fee": 0, 
@@ -147,6 +147,6 @@
       "frequency": "once",
       "f_value": "2019/04/21",
       "disableEventDates": [],
-      "imageURL": ""
+      "imageURL": "https://dugongsoftware.github.io/GutShot/Images/QA.jpg?x=442&y=293&crop=1""
   }
 ]
