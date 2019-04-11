@@ -34,7 +34,7 @@
       "stack": 40000,
       "frequency": "weekly",
       "f_value": 5,
-      "disableEventDates": ["2019/04/11", "2019/04/25"],
+      "disableEventDates": [],
       "imageURL": "https://dugongsoftware.github.io/GutShot/Images/QA.jpg?x=442&y=293&crop=1" 
   },  
   {
