@@ -11,60 +11,32 @@ import SwiftyJSON
 import Alamofire
 import SwiftSpinner
 
-class EventListController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class EventListController: UITableViewController {
     
     fileprivate let cellId = "cellId"
     fileprivate let headerId = "headerId"
     fileprivate let apiURL = "https://dugongsoftware.github.io/GutShot/Data/tournaments.json"
-    fileprivate let padding: CGFloat = 16
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupCollectionViewLayout()
-        setupCollectionView()
-        
+        setupHUD()
+        tableView.register(EventListCell.self, forCellReuseIdentifier: cellId)
         requestEventList()
     }
     
-    fileprivate func setupCollectionViewLayout() {
-        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.sectionInset = .init(top: padding, left: padding, bottom: padding, right: padding)
-        }
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    fileprivate func setupCollectionView() {
-        navigationController?.isNavigationBarHidden = true
-        collectionView.bounces = false
-        collectionView.backgroundColor = UIColor.groupTableViewBackground
-        collectionView.contentInsetAdjustmentBehavior = .never
-        collectionView.register(EventListCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! HeaderView
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(tapDetected))
-        header.addGestureRecognizer(tapGestureRecognizer)
-        
-        return header
-    }
-    
-    @objc func tapDetected() {
-        //self.selectedEvent = eventList[0]
-        //pushToEventDetailController()
+    fileprivate func setupHUD() {
+        self.title = "GutShot Brisbane"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
     }
     
     var selectedEvent: EventModel?
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let indexData = StoredEvents.sharedInstance.collection[indexPath.row]
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true) // avoid grey animation
+        let indexData = StoredEvents.sharedInstance.sectionCollection[indexPath.section][indexPath.row]
         self.selectedEvent = indexData
-        
         //pushToEventDetailController()
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM d h:mma"
@@ -77,36 +49,47 @@ class EventListController: UICollectionViewController, UICollectionViewDelegateF
         self.present(alert, animated: true, completion: nil)
     }
     
-    fileprivate func pushToEventDetailController() -> Void {
-        /*
-        let vc = EventDetailController()
-        
-        //TODO: LOAD FULL EVENT
-        if let selectedEvent = selectedEvent {
-            vc.selectedEvent = selectedEvent
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(30)
+    }
+ 
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "Header"
+        label.backgroundColor = UIColor.white
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+    
+        switch section {
+        case 0:
+            label.text = " Next Event"
+        case 1:
+            label.text = " This Week"
+        default:
+            label.text = " This Month"
         }
-        
-        self.navigationController?.pushViewController(vc, animated: true)*/
+        return label
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return .init(width: view.frame.width, height: 175)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(StoredEvents.sharedInstance.collection.count)
-        return StoredEvents.sharedInstance.collection.count
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! EventListCell
-        cell.cellDetail = StoredEvents.sharedInstance.collection[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! EventListCell
+        cell.cellDetail = StoredEvents.sharedInstance.sectionCollection[indexPath.section][indexPath.row]
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 2 * padding, height: 100)
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return StoredEvents.sharedInstance.sectionCollection[section].count
     }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return StoredEvents.sharedInstance.sectionCollection.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(110)
+    }
+
+    
 }
 
 extension EventListController {
@@ -129,12 +112,13 @@ extension EventListController {
                     events += generatedEvents // add to event-keeping array
                 }
                 StoredEvents.sharedInstance.collection = events.sorted(by: {$0.start.timeIntervalSince1970 < $1.start.timeIntervalSince1970}) //store to master array, sorted by date
-                self.collectionView.reloadData()
+                self.sortIntoSections()
+                self.tableView.reloadData()
                 SwiftSpinner.hide()
             }
         }
     }
-    
+
     // This function will determine if passed json entry is a weekly or a one-time event and generate a single or multiple events accordingly.
     fileprivate func generateEvents(dictionary: [String: Any]) -> [EventModel] {
         var eventCollection = [EventModel]()
@@ -162,5 +146,29 @@ extension EventListController {
         }
         return eventCollection
     }
+    
+    
+    fileprivate func sortIntoSections() {
+        var next = [EventModel]()
+        var thisWeek = [EventModel]()
+        var thisMonth = [EventModel]()
+        
+        let weeklyRange = Date()...Date().addingTimeInterval(604800)
+        
+        var collection = StoredEvents.sharedInstance.collection
+        let count = collection.count
+        for index in 0...count-1 {
+            let event = collection[index]
+            if index == 0 { // if event is today
+                next.append(event)
+            } else if weeklyRange.contains(event.start) {
+                thisWeek.append(event)
+            } else {
+                thisMonth.append(event)
+            }
+        }
+        StoredEvents.sharedInstance.sectionCollection.append(contentsOf: [next, thisWeek, thisMonth])
+    }
+    
     
 }

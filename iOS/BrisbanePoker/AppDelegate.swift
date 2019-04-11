@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        let viewController = EventListController(collectionViewLayout: UICollectionViewFlowLayout())
+        let viewController = EventListController()
         let navigationController = UINavigationController(rootViewController: viewController)
         window = UIWindow()
         window?.rootViewController = navigationController

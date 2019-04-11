@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventListCell: UICollectionViewCell {
+class EventListCell: UITableViewCell {
     
     var cellDetail: EventModel? {
         didSet{
@@ -69,14 +69,16 @@ class EventListCell: UICollectionViewCell {
         return label
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupHUD()
+
     }
     
+
     fileprivate func setupHUD() {
         addSubview(cellImageView)
-        cellImageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 90, height: 0)
+        cellImageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10, width: 90, height: 0)
         
         addSubview(eventTitleLabel)
         eventTitleLabel.anchor(top: topAnchor, left: cellImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 5, width: 0, height: 20)
