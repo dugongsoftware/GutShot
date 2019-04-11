@@ -50,12 +50,10 @@ extension Date {
         return dateString
     }
     
-}
-
-extension Date {
     func hasSame(_ components: Set<Calendar.Component>, as date: Date, using calendar: Calendar = .autoupdatingCurrent) -> Bool {
         return components.filter { calendar.component($0, from: date) != calendar.component($0, from: self) }.isEmpty
     }
+    
 }
 
 extension UIColor {

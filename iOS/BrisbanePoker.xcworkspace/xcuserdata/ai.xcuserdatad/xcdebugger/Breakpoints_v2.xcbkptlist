@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BrisbanePoker/CollectionViewControllers/EventListCell.swift"
-            timestampString = "576675036.750908"
+            timestampString = "576684408.503522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "setupCellDetails()"
             landmarkType = "7">
          </BreakpointContent>

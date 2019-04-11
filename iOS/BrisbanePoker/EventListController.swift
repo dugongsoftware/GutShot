@@ -10,9 +10,10 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 import SwiftSpinner
+import EventKit
 
-class EventListController: UITableViewController {
-    
+class EventListController: UITableViewController, EventListCellDelegate {
+
     fileprivate let cellId = "cellId"
     fileprivate let headerId = "headerId"
     fileprivate let apiURL = "https://dugongsoftware.github.io/GutShot/Data/tournaments.json"
@@ -53,7 +54,6 @@ class EventListController: UITableViewController {
         return CGFloat(30)
     }
  
-    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.text = "Header"
@@ -65,8 +65,10 @@ class EventListController: UITableViewController {
             label.text = " Next Event"
         case 1:
             label.text = " This Week"
-        default:
+        case 2:
             label.text = " This Month"
+        default:
+            label.text = " Coming Up"
         }
         return label
     }
@@ -74,6 +76,7 @@ class EventListController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! EventListCell
         cell.cellDetail = StoredEvents.sharedInstance.sectionCollection[indexPath.section][indexPath.row]
+        cell.delegate = self
         return cell
     }
     
@@ -88,7 +91,24 @@ class EventListController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(110)
     }
-
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, -10, 0)
+        cell.layer.transform = rotationTransform
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.75) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1.0
+        }
+    }
+    
+    func presentSuccessPopUp() {
+        let _message = "Successfully saved to calendar."
+        let alert = UIAlertController(title: "See you soon!", message: _message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
 }
 
@@ -152,22 +172,27 @@ extension EventListController {
         var next = [EventModel]()
         var thisWeek = [EventModel]()
         var thisMonth = [EventModel]()
+        var rest = [EventModel]()
         
         let weeklyRange = Date()...Date().addingTimeInterval(604800)
+        let monthlyRange = Date()...Date().addingTimeInterval(2618784)
         
         var collection = StoredEvents.sharedInstance.collection
         let count = collection.count
         for index in 0...count-1 {
             let event = collection[index]
-            if index == 0 { // if event is today
+            if index == 0 { // fetch first event in the list
                 next.append(event)
             } else if weeklyRange.contains(event.start) {
                 thisWeek.append(event)
-            } else {
+            } else if monthlyRange.contains(event.start) {
                 thisMonth.append(event)
+            } else {
+                rest.append(event)
             }
         }
-        StoredEvents.sharedInstance.sectionCollection.append(contentsOf: [next, thisWeek, thisMonth])
+        
+        StoredEvents.sharedInstance.sectionCollection.append(contentsOf: [next, thisWeek, thisMonth, rest])
     }
     
     
